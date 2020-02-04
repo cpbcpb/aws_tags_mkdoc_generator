@@ -10,6 +10,7 @@ ec2 = boto3.client('ec2')
 # To get descriptions, including tags, of all ec2 resources.
 # Refer to boto3 docs to see structure of the response.
 response=ec2.describe_instances()
+print(response)
 
 # Some hints about the structure of the response
 # The response is a dict with a Reservations property.
@@ -74,12 +75,12 @@ for reservation in response["Reservations"]:
             if theKey in tag_dict:
                 if theValue in tag_dict[theKey]:
                     # Add the current instance to the list for this value.
-                    tag_dict[theKey][theValue]["Instances"].append({"NameTag" : nameTag, "InstanceId": instance['InstanceId'] })
+                    tag_dict[theKey][theValue]["Instances"].append({"NameTag" : nameTag, "InstanceId": instance['InstanceId'], "PrivateIpAddress": instance["PrivateIpAddress"]})
                 else:
-                    tag_dict[theKey][theValue] = {"Instances": [ {"NameTag" : nameTag, "InstanceId": instance['InstanceId'] }]}
+                    tag_dict[theKey][theValue] = {"Instances": [ {"NameTag" : nameTag, "InstanceId": instance['InstanceId'], "PrivateIpAddress": instance["PrivateIpAddress"]}]}
             else:
                 # Add new tag key to the tag dict.
-                tag_dict[ theKey ]={ theValue: {"Instances": [ {"NameTag" : nameTag, "InstanceId": instance['InstanceId'] }]}}
+                tag_dict[ theKey ]={ theValue: {"Instances": [ {"NameTag" : nameTag, "InstanceId": instance['InstanceId'], "PrivateIpAddress": instance["PrivateIpAddress"] }]}}
                 # else:
                 #     
 
@@ -91,8 +92,8 @@ for tagKey in sorted(tag_dict.keys(), key=str.casefold):
     a_file.write("\n## %s\n" % tagKey)
     #for each value of the tag
     for valueText in sorted(tag_dict[tagKey].keys(), key=str.casefold):
-        a_file.write('\n- "%s"\n\n' % valueText)
+        a_file.write('\n- "%s"\n' % valueText)
         for instance in sorted(tag_dict[tagKey][valueText]["Instances"], key=lambda k: k['NameTag']):
-            a_file.write("  - %s (%s)\n" % (instance["InstanceId"], instance["NameTag"]))
+            a_file.write("  - %s (%s) [%s]\n" % (instance["InstanceId"], instance["NameTag"], instance["PrivateIpAddress"]))
 a_file.close()
 # newlist = sorted(list_to_be_sorted, key=lambda k: k['name']) 
