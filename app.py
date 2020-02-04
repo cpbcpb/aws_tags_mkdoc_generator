@@ -91,7 +91,8 @@ for tagKey in sorted(tag_dict.keys(), key=str.casefold):
     a_file.write("\n## %s\n" % tagKey)
     #for each value of the tag
     for valueText in sorted(tag_dict[tagKey].keys(), key=str.casefold):
-        a_file.write("\n### %s\n\n" % valueText)
-        for instance in tag_dict[tagKey][valueText]["Instances"]:
-            a_file.write("- %s (%s)\n" % (instance["InstanceId"], instance["NameTag"]))
+        a_file.write('\n- "%s"\n\n' % valueText)
+        for instance in sorted(tag_dict[tagKey][valueText]["Instances"], key=lambda k: k['NameTag']):
+            a_file.write("  - %s (%s)\n" % (instance["InstanceId"], instance["NameTag"]))
 a_file.close()
+# newlist = sorted(list_to_be_sorted, key=lambda k: k['name']) 
