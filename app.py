@@ -1,7 +1,7 @@
 # To install boto, use commandline command:
     # $python3 -m pip install boto3
 import boto3
-import json
+#import json # not using this yet
 # Make sure Amazon CLI is set up.
 # Make sure desired AWS account is your default in your
 # root .aws hidden config and credentials files.

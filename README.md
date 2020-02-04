@@ -4,29 +4,37 @@
 
 This project was started Feb 3, 2020 by Christine Beck.  It's purpose is to create documentation from AWS tags.  
 
-## Features
+## Getting Started
 
-- Will list working features here as they come.
+### Setup
 
-## How to Use
+1. Clone this repo
+2. You will need to install the AWS-cli. Check AWS-cli docs for install instructions.
+3. Make sure the AWS account you are interested in is set to default in your root .aws directory's credentials file.
+4. Install boto3, an aws library for python.
 
-- Will explain how to get this project working here once it has some features.
+    ```python
+    python3 -m pip install boto3
+    ```
+
+### To Run
+
+```bash
+cd use_tags_to_make_docs directory
+python3 ./app.py
+```
+
+### Output
+
+- Output will be printed to a new all_tags.md file in the output directory in this repo.  
+- Output is replaced each time the ./app.py command is run.
+
+
+## Why am I making this
+
+The user has AWS resources with tags that need to be updated.  This program helps visualize and organize AWS EC2 tags key value pairs during the update process.
 
 ## Tools Used
 
 - Boto3, a python AWS library
 - Python3
-- (probably) mkDocs
-
-## Why am I making this
-
-The user has AWS resources with tags describing dependencies. The user wants to be able to automatically create and update documentation in .md files based on these tags.  
-
-*The Tag Key* is "Dependencies" and *Tag Value* is stringified json with the name and version of each dependency:
-
-```json
-    'Dependencies': "{
-        'Python' : '3.7.4',
-        'boto3' : 'boto3'
-        }"
-```
