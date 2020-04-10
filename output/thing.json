@@ -1,0 +1,47 @@
+"{'Reservations': [
+        {'Groups': [], 'Instances': [
+        {'AmiLaunchIndex': 0, 'ImageId': 'ami-0080e4c5bc078760e', 'InstanceId': 'i-010f979d9332ed1b1', 'InstanceType': 't3.nano', 'KeyName': 'JoshPub', 'LaunchTime': datetime.datetime(2019,
+            3,
+            1,
+            15,
+            49,
+            7, tzinfo=tzutc()), 'Monitoring': {'State': 'disabled'
+            }, 'Placement': {'AvailabilityZone': 'us-east-1a', 'GroupName': '', 'Tenancy': 'default'
+            }, 'PrivateDnsName': 'ip-10-0-33-230.ec2.internal', 'PrivateIpAddress': '10.0.33.230', 'ProductCodes': [], 'PublicDnsName': '', 'State': {'Code': 16, 'Name': 'running'
+            }, 'StateTransitionReason': '', 'SubnetId': 'subnet-7aba7b11', 'VpcId': 'vpc-2e330447', 'Architecture': 'x86_64', 'BlockDeviceMappings': [
+                {'DeviceName': '/dev/xvda', 'Ebs': {'AttachTime': datetime.datetime(2019,
+                        3,
+                        1,
+                        15,
+                        49,
+                        8, tzinfo=tzutc()), 'DeleteOnTermination': True, 'Status': 'attached', 'VolumeId': 'vol-030801aa7bc2c7408'
+                    }
+                }
+            ], 'ClientToken': '', 'EbsOptimized': True, 'EnaSupport': True, 'Hypervisor': 'xen', 'IamInstanceProfile': {'Arn': 'arn:aws:iam: : 108773553414:instance-profile/accounting-service-server', 'Id': 'AIPAISHR6LZJ7IGEFROM2'
+            }, 'NetworkInterfaces': [
+                {'Attachment': {'AttachTime': datetime.datetime(2019,
+                        3,
+                        1,
+                        15,
+                        49,
+                        7, tzinfo=tzutc()), 'AttachmentId': 'eni-attach-0b08f1a041509bec1', 'DeleteOnTermination': True, 'DeviceIndex': 0, 'Status': 'attached'
+                    }, 'Description': 'Primary network interface', 'Groups': [
+                        {'GroupName': 'Webservers', 'GroupId': 'sg-12110c7e'
+                        },
+                        {'GroupName': 'Administrative-Ports', 'GroupId': 'sg-005fabd1ff4ee40d1'
+                        }
+                    ], 'Ipv6Addresses': [], 'MacAddress': '0a: 6a:e7: 4c:cb: 26', 'NetworkInterfaceId': 'eni-05dcc8a2d395167fc', 'OwnerId': '108773553414', 'PrivateDnsName': 'ip-10-0-33-230.ec2.internal', 'PrivateIpAddress': '10.0.33.230', 'PrivateIpAddresses': [
+                        {'Primary': True, 'PrivateDnsName': 'ip-10-0-33-230.ec2.internal', 'PrivateIpAddress': '10.0.33.230'
+                        }
+                    ], 'SourceDestCheck': True, 'Status': 'in-use', 'SubnetId': 'subnet-7aba7b11', 'VpcId': 'vpc-2e330447', 'InterfaceType': 'interface'
+                }
+            ], 'RootDeviceName': '/dev/xvda', 'RootDeviceType': 'ebs', 'SecurityGroups': [
+                {'GroupName': 'Webservers', 'GroupId': 'sg-12110c7e'
+                },
+                {'GroupName': 'Administrative-Ports', 'GroupId': 'sg-005fabd1ff4ee40d1'
+                }
+            ], 'SourceDestCheck': True, 'Tags': [
+                {'Key': 'AuditDue', 'Value': ''
+                },
+                {'Key': 'DocLink', 'Value': 'https: //bit.ly/33X7XfQ'}, {'Key': 'Name', 'Value': 'Accounting Services'}, {'Key': 'Description', 'Value': ''}], 'VirtualizationType': 'hvm', 'CpuOptions': {'CoreCount': 1, 'ThreadsPerCore': 2}, 'CapacityReservationSpecification': {'CapacityReservationPreference': 'open'}, 'HibernationOptions': {'Configured': False}, 'MetadataOptions': {'State': 'applied', 'HttpTokens': 'optional', 'HttpPutResponseHopLimit': 1, 'HttpEndpoint': 'enabled'}}], 'OwnerId': '108773553414', 'ReservationId': 'r-085e35beaa7f709b6'}], 'ResponseMetadata': {'RequestId': '367e54f0-2c19-4cba-bba5-e7716e66b75b', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '367e54f0-2c19-4cba-bba5-e7716e66b75b', 'content-type': 'text/xml;charset=UTF-8', 'content-length': '7523', 'vary': 'accept-encoding', 'date': 'Wed, 01 Apr 2020 19:48:49 GMT', 'server': 'AmazonEC2'}, 'RetryAttempts': 0}}
+                        "
