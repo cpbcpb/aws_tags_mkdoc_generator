@@ -137,15 +137,13 @@ for tagKey in sorted(tag_dict.keys(), key=str.casefold):
 
 
 
-                        if 'Platform' in innerinstance:
-                            a_file.write('## %s\n\n' % valueText)
                             a_file.write("  [%s](https://console.aws.amazon.com/ec2/home?region=us-east-1#Instances:search=%s;sort=tag:Name)\n" % (
                                 valueText, instance["InstanceId"]))
-                                a_file.write('## %s\n\n' %
-                                             innerinstance['Platform'])
-                            a_file.write("  * %s (%s) [%s]\n\n" % (
-                                instance["InstanceId"], instance["NameTag"], instance["PrivateIpAddress"]))
-    #                       a_file.write( " %s\n"% (innerinstance))
+                            a_file.write('## %s\n\n' %
+                                            innerinstance['Platform'])
+                        a_file.write("  * %s (%s) [%s]\n\n" % (
+                            instance["InstanceId"], instance["NameTag"], instance["PrivateIpAddress"]))
+#                       a_file.write( " %s\n"% (innerinstance))
 
 # Now make a dict of tags with each key
 tag_dict = {}
